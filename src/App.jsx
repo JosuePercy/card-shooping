@@ -14,7 +14,7 @@ import { IS_DEVELOPMENT } from "./config.js";
 function App() {
   
   const [products] = useState(initialProducts);
-  const { filters, filterProducts, setFilters } = useFilters();
+  const { filters, filterProducts } = useFilters();
 
   const filteredProducts = filterProducts(products)
 
