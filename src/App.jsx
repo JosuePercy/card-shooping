@@ -8,21 +8,25 @@ import { Products } from './components/Products.jsx'
 import { Header } from "./components/Header.jsx";
 import { Footer } from "./components/Footer.jsx";
 import { IS_DEVELOPMENT } from "./config.js";
+import { Cart } from "./components/Cart.jsx";
+import { CartPorvider } from "./context/cart.jsx";
 
 
 
 function App() {
   
-  const [products] = useState(initialProducts);
-  const { filters, filterProducts } = useFilters();
+  const { filterProducts } = useFilters();
 
-  const filteredProducts = filterProducts(products)
+  const filteredProducts = filterProducts(initialProducts);
 
   return (
     <>
-      <Header  />
-      <Products products={filteredProducts} />
-      {IS_DEVELOPMENT && <Footer filters={filters} />}
+      <CartPorvider>
+        <Header />
+        <Cart />
+        <Products products={filteredProducts} />
+        {IS_DEVELOPMENT && <Footer />}
+      </CartPorvider>
     </>
   );
   

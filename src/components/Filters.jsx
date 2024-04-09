@@ -8,6 +8,7 @@ export function Filters() {
   const { filters, setFilters } = useFilters();
 
   const [ minPrice, setMinPrice] = useState(0); // Estado local Filters
+  
   const minPriceFilterId = useId();
   const categoryFilterId = useId();
 
@@ -29,6 +30,7 @@ export function Filters() {
 
   return (
     <section className="filters">
+
       <div>
         <label htmlFor={minPriceFilterId}>Precio</label>
         <input
