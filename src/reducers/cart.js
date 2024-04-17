@@ -25,7 +25,7 @@ export const cartReducer = (state, action) => {
         {
           ...actionPayload,
           quantity: 1,
-        },
+        },1
       ];
     }
     case CART_ACTION_TYPES.REMOVE_FROM_CART: {
@@ -35,6 +35,8 @@ export const cartReducer = (state, action) => {
 
     case CART_ACTION_TYPES.CLEAR_CART: {
       return cartInitialState;
-    }
+    } 
+
+    
   }
 };

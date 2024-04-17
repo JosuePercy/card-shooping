@@ -13,12 +13,11 @@ import { CartPorvider } from "./context/cart.jsx";
 
 
 
-function App() {
-  
+function App() {                         
   const { filterProducts } = useFilters();
 
   const filteredProducts = filterProducts(initialProducts);
-
+  
   return (
     <>
       <CartPorvider>
